@@ -7,7 +7,7 @@ SELECT amount FROM loan ORDER BY amount ASC LIMIT 3;
 --Query 4
 SELECT DISTINCT status FROM loan ORDER BY status ASC;
 ---Query 5
-SELECT loan_id FROM loan ORDER BY amount DESC LIMIT 1;
+SELECT loan_id FROM loan ORDER BY payments DESC LIMIT 1;
 --Query 6
 SELECT account_id AS id, amount FROM loan ORDER BY id ASC LIMIT 5;
 --Query 7
@@ -21,9 +21,9 @@ SELECT DISTINCT account_id FROM `order` WHERE order_id <= 29560 and order_id >= 
 --Query 11
 SELECT amount FROM `order` WHERE account_to == 30067122;
 --Query 12
-SELECT trans_id, date, type, amount FROM trans WHERE account_id == 793 ORDER BY date DESC LIMIT 10;
+SELECT trans_id, date, type, amount FROM trans WHERE account_id == 793 ORDER BY date DESC, trans_id DESC LIMIT 10;
 --Query 13
-SELECT COUNT(*) FROM client WHERE district_id < 10 GROUP BY district_id ORDER BY district_id ASC;
+SELECT district_id, COUNT(*) FROM client WHERE district_id < 10 GROUP BY district_id ORDER BY district_id ASC;
 --Query 14
 SELECT type, COUNT(*) AS c FROM card GROUP BY type ORDER BY c DESC;
 --Query 15
